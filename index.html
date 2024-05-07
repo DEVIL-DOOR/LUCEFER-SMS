@@ -1,77 +1,112 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Xbomber is the pioneer of sms and call bombers in Bangladesh. For a long time, this was a closed source project. But we (Team X 1337) have decided to make it open source so that everyone can gain knowledge from this project and create their own project from this github template.">
-  <title>XBOMBER | Community Edition</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="assets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUSTOM SMS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #333;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 8px;
+            color: #666;
+        }
+        input[type="text"],
+        textarea {
+            padding: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        button[type="submit"]:focus {
+            outline: none;
+        }
+        .status-message {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
 </head>
-
 <body>
-  <section class="container-fluid">
-    <section class="row justify-content-center">
-      <section class="col-12 col-sm-6 col-md-4">
-        <div class="form form-container">
-          <div class="form-group">
-            <h1 class="text-center font-weight-bold header">
-              <i class="bi bi-emoji-heart-eyes"></i> XBOMBER <i class="bi bi-emoji-heart-eyes-fill"></i>
-            </h1>
-            <p class="credit text-muted"><small>FROM</small> <span class="fw-bold">TEAM X 1337</span></p>
-            <p class="notice">
-              <i class="bi bi-x"></i> 
-              DEVELOPERS WON'T TAKE RESPONSIBLITY OF ANY MISUSE.
-              <i class="bi bi-x"></i>
-            </p>
-          </div>
-          <br>
-          <form>
-            <div class="mb-3">
-              <label for="mobile" class="form-label"><text style="color:white !important"><i
-                    class="bi bi-person-circle"></i> TARGET NUMBER</text> </label>
-              <input type="number" class="form-control" id="mobile">
-            </div>
-            <div class="mb-3">
-              <label for="amount" class="form-label"><text style="color:white !important"><i
-                    class="bi bi-speedometer2"></i> AMOUNT</text></label>
-              <input type="number" class="form-control" id="amount">
-            </div>
-            <div class="d-flex justify-content-center">
-              <div class="alert alert-info visually-hidden fw-bold" role="alert" id="logs">
+    <div class="container">
+        <h1>LUCEFER CUSTOM SMS</h1>
+        <form id="bomber-form">
+            <label for="phone-number">Phone Number PROFESDOR</label>
+            <input type="text" id="phone-number" name="phone-number" placeholder="Enter phone number" required>
+            <label for="message">Message its me shuvo</label>
+            <textarea id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
+            <button type="submit">SEND SMS</button>
+            <div class="status-message" id="status-message"></div>
+        </form>
+    </div>
 
-              </div>
-            </div>
-            <br>
-            <div align="center">
-              <button id="send" type="submit" class="btn btn-outline-light"><i class="bi bi-lightning-charge"></i>
-                <b>SUBMIT</b> </button>
-            </div>
-          </form>
-          <hr>
-          <div class="footer-copyright text-center py-3" align="center">
-            <small class="text-muted" style="color: white !important">MADE WITH <i class="bi bi-heart"
-                style="color:red !important"></i> BY <b>SowmikSudo</b></small>
-            <br><br>
-            <button class="btn btn-outline-primary"
-              onclick="document.location='https://t.me/ign0r3dh4x0r'">
-              <i class="bi bi-tree"></i>
-              LINKTREE
-            </button>
-            <span style="color: white;"> | </span>
-            <button class="btn btn-outline-primary" onclick="document.location='https://github.com/sowmiksudo'">
-              <i class="bi bi-github"></i>
-              GITHUB
-            </button>
-            <br>
-          </div>
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-          <script src="assets/script.js"></script>
-          <script src="https://ezstat.ru/1F2zr7.js"></script>
-        </div>
+    <script>
+        document.getElementById('bomber-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var phoneNumber = document.getElementById('phone-number').value;
+            var message = document.getElementById('message').value;
+
+            var smsBomberUrl = 'https://mdrana.co/customsms/api.php?num=' + encodeURIComponent(phoneNumber) + '&msg=' + encodeURIComponent(message);
+
+            fetch(smsBomberUrl)
+                .then(response => response.json())
+                .then(data => {
+                    var statusMessage = document.getElementById('status-message');
+                    if (data.status === 'success') {
+                        statusMessage.innerHTML = 'SMS sent successfully!';
+                        statusMessage.style.color = 'green';
+                    } else {
+                        statusMessage.innerHTML = 'Error: ' + data.message;
+                        statusMessage.style.color = 'red';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    var statusMessage = document.getElementById('status-message');
+                    statusMessage.innerHTML = 'An error occurred while sending the SMS. Please try again later.';
+                    statusMessage.style.color = 'red';
+                });
+        });
+    </script>
 </body>
-
-</html>
+      </html>
